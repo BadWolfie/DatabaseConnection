@@ -10,7 +10,7 @@ public interface ConnectionParameters {
 	public final String driver = "com.mysql.jdbc.Driver";
 
 	// Set this parameters according to your credentials
-    public final String database = "database_name";
-    public final String username = "username";
-    public final String password = "password";
+	public final String database = "database_name";
+	public final String username = "username";
+	public final String password = "password";
 }
