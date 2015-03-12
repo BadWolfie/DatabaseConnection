@@ -1,8 +1,5 @@
 package dbConnection;
 
-import java.sql.DatabaseMetaData;
-import java.util.logging.Logger;
-import java.util.logging.Level;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,11 +20,20 @@ public class DBOperation {
         return dbConnection.getConnection();
     }
 
+    /**
+     * Used to close the connection to the data base
+     */
     public void closeConnection() {
         dbConnection.closeConnection();
     }
     
-    // Used for SELECT operations
+    /**
+     * Used for SELECT operations
+     * 
+     * @param query Query to be executed
+     * @param scrollable If the return value is scroll sensitive or not
+     * @return ResultSet for the query executed.
+     */
     public ResultSet getQueryResult(String query, boolean scrollable) {
         ResultSet rs = (ResultSet)null;
         Statement st;
@@ -47,7 +53,12 @@ public class DBOperation {
         return rs;
     }
     
-    // Used for INSERT, UPDATE and DELETE operations
+    /** 
+     * Used for INSERT, UPDATE and DELETE operations
+     * 
+     * @param query Query to be executed
+     * @return Operation successfull or not
+     */
     public boolean executeOperation(String query) {
         int affRows = 0;
 
